@@ -1,0 +1,293 @@
+/* Base Transition for Smooth Effects */
+* {
+  transition: background-color 0.5s ease, color 0.5s ease, border-color 0.5s ease;
+}
+
+/* Typography */
+body {
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Light & Dark Mode Backgrounds */
+body.dark {
+  background-color: #121212;
+}
+
+body.light {
+  background-color: #ffffff;
+}
+
+/* Universal Component Styling */
+.navbar,
+.card,
+.alert,
+.form-control {
+  border-radius: 1rem;
+}
+
+.card,
+.navbar {
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+}
+
+/* Button Modern Look */
+.btn-modern {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-weight: 500;
+  border-radius: 0.75rem;
+  transition: transform 0.2s ease;
+}
+
+.btn-modern:hover {
+  transform: scale(1.05);
+}
+
+.btn-modern:focus {
+  outline: 2px solid #0d6efd;
+  outline-offset: 2px;
+}
+
+
+/* Map Styling */
+#map {
+  height: 500px;
+  border-radius: 1rem;
+  border: 2px solid #343a40;
+  max-height: 60vh;
+}
+
+/* Small Text Styling */
+#refreshStatusSmall {
+  font-size: 0.85rem;
+  gap: 6px;
+}
+
+/* Auto Refresh Indicator */
+.auto-refresh-indicator {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  background-color: limegreen;
+  border-radius: 50%;
+  animation: blink 1s infinite;
+  margin-left: 6px;
+}
+
+@keyframes blink {
+
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.2;
+  }
+}
+
+/* Branding */
+.brand-text {
+  font-weight: 600;
+  font-size: 1.1rem;
+  transition: color 0.3s;
+}
+
+/* Light & Dark Mode Text Coloring */
+body.dark,
+body.dark p,
+body.dark h1,
+body.dark h2,
+body.dark h3,
+body.dark h4,
+body.dark h5,
+body.dark h6,
+body.dark span,
+body.dark label {
+  color: #ffffff !important;
+}
+
+body.light,
+body.light p,
+body.light h1,
+body.light h2,
+body.light h3,
+body.light h4,
+body.light h5,
+body.light h6,
+body.light span,
+body.light label {
+  color: #000000 !important;
+}
+
+/* Placeholder Coloring */
+body.dark input::placeholder,
+body.dark textarea::placeholder {
+  color: #ccc;
+}
+
+body.light input::placeholder,
+body.light textarea::placeholder {
+  color: #666;
+}
+
+/* Form Control Backgrounds */
+body.dark .form-control {
+  background-color: #1e1e1e;
+  border-color: #333;
+}
+
+body.light .form-control {
+  background-color: #fff;
+  border-color: #ccc;
+}
+
+/* Card Theme Color */
+.card.dark {
+  background-color: #1a1a1a !important;
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.05);
+}
+
+
+.card.light {
+  background-color: #ffffff !important;
+  color: #000000 !important;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 576px) {
+  .row.g-3 .btn-modern {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+/* Auto Refresh Button Size Adjustments */
+#autoRefreshBtn {
+  white-space: nowrap;
+  font-size: 0.85rem;
+  padding: 0.4rem 0.6rem;
+}
+
+@media (max-width: 768px) {
+  #autoRefreshBtn {
+    font-size: 0.75rem;
+    gap: 4px;
+    padding: 0.3rem 0.5rem;
+  }
+
+  #autoRefreshBtn span {
+    font-size: 0.75rem;
+  }
+
+  #refreshCountdownSmall {
+    font-size: 0.7rem;
+  }
+}
+
+/* Live Update Notification */
+.live-update {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  z-index: 9999;
+  background-color: rgba(0, 200, 0, 0.1);
+  border-left: 4px solid limegreen;
+  padding: 0.75rem 1.25rem;
+  border-radius: 0.5rem;
+  font-size: 0.95rem;
+  color: limegreen;
+  display: none;
+  animation: fadeSlideIn 2s ease-in-out;
+}
+
+@keyframes fadeSlideIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+
+  10%,
+  90% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes fadeInOut {
+  0% {
+    opacity: 0;
+  }
+
+  10% {
+    opacity: 1;
+  }
+
+  90% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  50% {
+    transform: scale(1.2);
+    opacity: 0.6;
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.marker-pulse {
+  animation: pulse 1s ease;
+}
+
+#mapFullscreenBtn {
+  top: 10px;
+  right: 10px;
+  z-index: 1000;
+  padding: 6px 8px;
+  border-radius: 8px;
+}
+
+#mapFullscreenBtn:hover {
+  background-color: #e0e0e0;
+}
+
+.countdown-warning {
+  color: orange !important;
+}
+
+.countdown-danger {
+  color: red !important;
+  animation: blink-fast 1s infinite;
+}
+
+@keyframes blink-fast {
+
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.3;
+  }
+}

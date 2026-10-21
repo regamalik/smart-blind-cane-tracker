@@ -1,0 +1,12 @@
+# Konfigurasi asli (kredensial) tidak di-commit
+db_config.php
+
+# Sistem
+.DS_Store
+Thumbs.db
+*.log
+*.tmp
+
+# Editor
+.vscode/
+.idea/
